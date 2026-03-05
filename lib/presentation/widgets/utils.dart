@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:students_ege_helper/presentation/theme/extension.dart';
 import 'package:students_ege_helper/presentation/theme/palette.dart';
+
+void showError(String e) =>
+    Get.defaultDialog(title: 'Ошибка', content: Text(e));
 
 class MaterialAppWrapper extends StatelessWidget {
   final List<Widget> Function(BuildContext) buildWidgets;

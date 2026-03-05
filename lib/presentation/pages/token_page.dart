@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:students_ege_helper/main.dart';
 import 'package:students_ege_helper/presentation/pages/main_page.dart';
 import 'package:students_ege_helper/presentation/theme/extension.dart';
 import 'package:students_ege_helper/presentation/typography/custom_styles.dart';
 import 'package:students_ege_helper/presentation/widgets/custom_button.dart';
 import 'package:students_ege_helper/presentation/widgets/custom_input.dart';
+import 'package:students_ege_helper/presentation/widgets/utils.dart';
 
 class TokenPage extends StatefulWidget {
   const TokenPage({super.key});
@@ -57,13 +59,21 @@ class _TokenPageState extends State<TokenPage> {
               width: 336.w,
               child: CustomButton(
                 type: .standart,
-                onPressed: () => Get.back(),
+                onPressed: _processTokenLogin,
                 text: 'Использовать токен',
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  void _processTokenLogin() async {
+    await aiUseCase.tokenLogin(
+      token: _tokenController.text,
+      onResponse: (_) => Get.back(),
+      onError: (e) => showError(e),
     );
   }
 }
