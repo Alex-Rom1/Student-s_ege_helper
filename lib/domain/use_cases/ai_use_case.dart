@@ -1,10 +1,8 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:students_ege_helper/data/repository/client.dart';
 
 class AiUseCase {
   final Client _client;
-  final _connectivity = Connectivity();
 
   AiUseCase({required Dio dio}) : _client = Client(dio: dio);
 
@@ -15,17 +13,11 @@ class AiUseCase {
     required Function(T) onResponse,
     required Function(String) onError,
   }) async {
-    final connectivityResults = await _connectivity.checkConnectivity();
-
-    if (connectivityResults.contains(ConnectivityResult.none)) {
-      await onError('Нет подключения к интернету');
-    } else {
-      try {
-        T response = await request();
-        await onResponse(response);
-      } on Exception catch (e) {
-        await onError(castError(e));
-      }
+    try {
+      T response = await request();
+      await onResponse(response);
+    } on Exception catch (e) {
+      await onError(castError(e));
     }
   }
 
@@ -48,6 +40,18 @@ class AiUseCase {
   }) async {
     await request(
       request: () => _client.tokenLogin(token: token),
+      onResponse: onResponse,
+      onError: onError,
+    );
+  }
+
+  Future<void> getCompletion({
+    required String prompt,
+    required Function(String) onResponse,
+    required Function(String) onError,
+  }) async {
+    await request(
+      request: () => _client.getCompletion(prompt: prompt),
       onResponse: onResponse,
       onError: onError,
     );

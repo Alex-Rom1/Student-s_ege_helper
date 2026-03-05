@@ -15,6 +15,23 @@ void onResponse<ExpectedT>(obj) {
 
 void onError(String e) => fail(e);
 
-void main() {
-  group('ai test', () {});
+void main() async {
+  await _aiUseCase.tokenLogin(
+    token:
+        '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',
+    onResponse: (_) {},
+    onError: (_) {
+      return;
+    },
+  );
+  group('ai test', () {
+    test('getCompletion', () async {
+      await _aiUseCase.getCompletion(
+        prompt:
+            'сколько первичных баллов можно получить за 19 задание ЕГЭ по профильной математике',
+        onResponse: onResponse<String>,
+        onError: onError,
+      );
+    });
+  });
 }
