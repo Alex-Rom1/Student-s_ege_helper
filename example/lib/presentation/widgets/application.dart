@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:students_ege_helper/presentation/theme/extension.dart';
 import 'package:students_ege_helper/presentation/theme/palette.dart';
+import 'package:students_ege_helper/presentation/typography/custom_styles.dart';
 import 'package:students_ege_helper/presentation/widgets/utils.dart';
 
 class Application extends StatefulWidget {
@@ -42,6 +43,18 @@ class _ApplicationState extends State<Application> {
                 ],
               ],
             ),
+          ],
+        ),
+
+        Column(
+          spacing: 10.h,
+          children: [
+            for (var text in CustomStyles.stylesMap.entries) ...[
+              Text(
+                text.key,
+                style: text.value.copyWith(color: theme.palette.text),
+              ),
+            ],
           ],
         ),
       ];
