@@ -1,4 +1,4 @@
-import 'package:example/data/repository/repository.dart';
+import 'package:students_ege_helper/data/repository/repository.dart';
 import 'package:dio/dio.dart';
 
 class Client implements Repository{
