@@ -13,6 +13,12 @@ class CustomStyles {
     fontSize: 32.sp,
     fontWeight: .w700,
   );
+  static TextStyle get nunitoBold24 => TextStyle(
+    package: _package,
+    fontFamily: _nunitoFamily,
+    fontSize: 24.sp,
+    fontWeight: .w700,
+  );
   static TextStyle get nunitoMedium18 => TextStyle(
     package: _package,
     fontFamily: _nunitoFamily,
