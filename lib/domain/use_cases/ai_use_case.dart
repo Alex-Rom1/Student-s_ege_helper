@@ -40,4 +40,16 @@ class AiUseCase {
 
     return '${e.response!.statusMessage} (${e.response!.statusCode})\n${e.message}';
   }
+
+  Future<void> tokenLogin({
+    required String token,
+    required Function(void) onResponse,
+    required Function(String) onError,
+  }) async {
+    await request(
+      request: () => _client.tokenLogin(token: token),
+      onResponse: onResponse,
+      onError: onError,
+    );
+  }
 }

@@ -1,7 +1,7 @@
 import 'package:students_ege_helper/data/repository/repository.dart';
 import 'package:dio/dio.dart';
 
-class Client implements Repository{
+class Client implements Repository {
   String? _authToken;
 
   final Dio _dio;
@@ -10,4 +10,9 @@ class Client implements Repository{
 
   @override
   String? get authToken => _authToken;
+
+  @override
+  Future<void> tokenLogin({required String token}) async {
+    _authToken = token;
+  }
 }
