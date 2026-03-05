@@ -34,7 +34,7 @@ class CustomButton extends StatelessWidget {
           disabledBackgroundColor: null,
           shape: RoundedRectangleBorder(
             borderRadius: .circular(10.r),
-            side: BorderSide(color: theme.palette.border, width: 1.w),
+            side: BorderSide(color: theme.palette.border, width: 1.r),
           ),
         ),
         child: Text(

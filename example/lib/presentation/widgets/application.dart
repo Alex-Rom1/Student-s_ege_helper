@@ -5,6 +5,7 @@ import 'package:students_ege_helper/presentation/theme/palette.dart';
 import 'package:students_ege_helper/presentation/typography/custom_styles.dart';
 import 'package:students_ege_helper/presentation/widgets/utils.dart';
 import 'package:students_ege_helper/presentation/widgets/custom_button.dart';
+import 'package:students_ege_helper/presentation/widgets/custom_input.dart';
 
 class Application extends StatefulWidget {
   const Application({super.key});
@@ -83,6 +84,9 @@ class _ApplicationState extends State<Application> {
             text: 'Использовать токен',
           ),
         ),
+        SizedBox(width: 336.w, child: CustomInput(controller: .new(), label: 'token',)),
+        SizedBox(width: 336.w, child: CustomInput(controller: .new(text: 'text'), hint: 'token',)),
+        SizedBox(width: 336.w, child: CustomInput(controller: .new(), label: 'token', hint: 'token',)),
       ];
     },
   );

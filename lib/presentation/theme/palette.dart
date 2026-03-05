@@ -29,10 +29,10 @@ class DarkPalette extends Palette{
   Color bloc = Color(0xFF353535);
 
   @override
-  Color border = Color(0xFF4C4C4C);
+  Color border = Color(0xFF6C6C6C);
 
   @override
-  Color hint = Color(0xFF3C3C3C);
+  Color hint = Color(0xFF8C8C8C);
 
   @override
   Color text = Color(0xFFEBEBEB);
