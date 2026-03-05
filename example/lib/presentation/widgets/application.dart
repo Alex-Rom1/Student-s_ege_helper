@@ -4,6 +4,7 @@ import 'package:students_ege_helper/presentation/theme/extension.dart';
 import 'package:students_ege_helper/presentation/theme/palette.dart';
 import 'package:students_ege_helper/presentation/typography/custom_styles.dart';
 import 'package:students_ege_helper/presentation/widgets/utils.dart';
+import 'package:students_ege_helper/presentation/widgets/custom_button.dart';
 
 class Application extends StatefulWidget {
   const Application({super.key});
@@ -57,7 +58,36 @@ class _ApplicationState extends State<Application> {
             ],
           ],
         ),
+
+        SizedBox.square(
+          dimension: 40.r,
+          child: CustomButton(
+            type: .icon,
+            onPressed: _testBtnFunc,
+            icon: Icon(Icons.arrow_back, color: theme.palette.text, size: 24.r,),
+          ),
+        ),
+        SizedBox(
+          width: 336.w,
+          child: CustomButton(
+            type: .standart,
+            onPressed: _testBtnFunc,
+            text: 'Использовать токен',
+          ),
+        ),
+        SizedBox(
+          width: 336.w,
+          child: CustomButton(
+            type: .simple,
+            onPressed: _testBtnFunc,
+            text: 'Использовать токен',
+          ),
+        ),
       ];
     },
   );
+
+  void _testBtnFunc() {
+    debugPrint('button pressed');
+  }
 }
