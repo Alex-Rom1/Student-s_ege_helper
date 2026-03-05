@@ -28,10 +28,12 @@ class MaterialAppWrapper extends StatelessWidget {
             backgroundColor: theme.palette.background,
             body: Padding(
               padding: MediaQuery.paddingOf(context),
-              child: Column(
-                crossAxisAlignment: .center,
-                spacing: 20.h,
-                children: buildWidgets(context),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: .center,
+                  spacing: 20.h,
+                  children: buildWidgets(context),
+                ),
               ),
             ),
           );
