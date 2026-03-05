@@ -7,6 +7,15 @@ abstract class Palette {
   abstract Color border;
   abstract Color hint;
   abstract Color text;
+
+  List<Color> get colorsList => [
+    accent,
+    background,
+    bloc,
+    border,
+    hint,
+    text,
+  ];
 }
 
 class DarkPalette extends Palette{
