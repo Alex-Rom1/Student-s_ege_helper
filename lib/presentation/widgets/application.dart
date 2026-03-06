@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:students_ege_helper/presentation/pages/main_page.dart';
-import 'package:students_ege_helper/presentation/pages/token_page.dart';
 import 'package:students_ege_helper/presentation/theme/extension.dart';
 import 'package:students_ege_helper/presentation/theme/palette.dart';
 

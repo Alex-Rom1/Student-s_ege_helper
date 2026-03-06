@@ -17,8 +17,7 @@ void onError(String e) => fail(e);
 
 void main() async {
   await _aiUseCase.tokenLogin(
-    token:
-        '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',
+    token: '', //Введите сюда свой токен для теста
     onResponse: (_) {},
     onError: (_) {
       return;

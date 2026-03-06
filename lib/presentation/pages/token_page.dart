@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:students_ege_helper/main.dart';
-import 'package:students_ege_helper/presentation/pages/main_page.dart';
 import 'package:students_ege_helper/presentation/theme/extension.dart';
 import 'package:students_ege_helper/presentation/typography/custom_styles.dart';
 import 'package:students_ege_helper/presentation/widgets/custom_button.dart';
